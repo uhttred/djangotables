@@ -25,14 +25,11 @@ class TableField:
         self.td_attrs = td_attrs if isinstance( td_attrs, dict ) else {}
         # filter
         self._filter  = _filter 
+
+    """ Join all th html attributes """
     
-    """ 
-        Join all html attributes 
-        returns a tuple with joined th and td attributes
-        ( joined_th_attrs, joined_th_attrs )
-    """
-    
-    def __join_html_attrs(self):
+    @property
+    def joined_th_attrs(self):
         
         # joined th attributes
         joined_th_attrs = ''
@@ -41,6 +38,13 @@ class TableField:
             for attr, value in self.th_attrs.items():
                 joined_th_attrs += f' {attr}="{value}"'
 
+        return joined_th_attrs
+
+    """ Join all td html attributes """
+    
+    @property
+    def joined_td_attrs(self):
+
         # joined td attributes
         joined_td_attrs = ''
 
@@ -48,7 +52,7 @@ class TableField:
             for attr, value in self.td_attrs.items():
                 joined_td_attrs += f' {attr}="{value}"'
 
-        return joined_th_attrs, joined_td_attrs
+        return joined_td_attrs
 
 """
     TextField, for varchar field, like django forms.TextField
