@@ -8,6 +8,12 @@ dist/
 .pytest_cache
 .tox/
 
+# test
+__init__.py
+manage.py 
+testetable/
+db.sqlite3
+
 # Packages
 *.egg
 *.egg-info
