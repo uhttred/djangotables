@@ -46,7 +46,7 @@ class UserTable(tables.Table):
 
 ```
 
-So in your ``vews.py`` file, just import your table class and instantiate it
+So, in your ``vews.py`` file, just import your table class and instantiate it
 by passing the queryset
 
 ```python
