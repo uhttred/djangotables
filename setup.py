@@ -11,10 +11,10 @@ def get_version(filename):
 
 version = get_version(os.path.join("djangotables", "__init__.py"))
 
-with open("README.md", "r") as readme_file:
+with open("README.rst", "r") as readme_file:
     readme = readme_file.read()
 
-with open("HISTORY.md", "r") as history_file:
+with open("HISTORY.rst", "r") as history_file:
     history = history_file.read()
 
 setup(
@@ -29,7 +29,13 @@ setup(
     author_email="ageumatheus1@gmail.com",
     maintainer="Ageu Matheus",
     maintainer_email="ageumatheus1@gmail.com",
-    url="",
+    url="https://github.com/AgeuMatheus/djangotables",
+    project_urls={
+        "Changelog": (
+            "https://github.com/AgeuMatheus/djangotables"
+            + "/blob/master/HISTORY.rst"
+        )
+    },
     packages=["djangotables"],
     license="MIT License",
     keywords=["django", "tables", "djangotables"],
