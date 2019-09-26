@@ -1,8 +1,7 @@
 import os
 import re
 
-from setuptools import setup
-
+import setuptools
 
 def get_version(filename):
     with open(filename, "r") as fp:
@@ -11,20 +10,18 @@ def get_version(filename):
 
 version = get_version(os.path.join("djangotables", "__init__.py"))
 
-with open("README.rst", "r") as readme_file:
+with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
-with open("HISTORY.rst", "r") as history_file:
-    history = history_file.read()
-
-setup(
+setuptools.setup(
     name="djangotables",
     version=version,
     description=(
-        "djangotables is a simple library for generating html "
+        "Djangotables is a simple library for generating html "
         "tables with Django Framework using model data like django forms."
     ),
-    long_description=readme + "\n\n" + history,
+    long_description=readme,
+    long_description_content_type="text/markdown",
     author="Ageu Matheus",
     author_email="ageumatheus1@gmail.com",
     maintainer="Ageu Matheus",
@@ -33,14 +30,14 @@ setup(
     project_urls={
         "Changelog": (
             "https://github.com/AgeuMatheus/djangotables"
-            + "/blob/master/HISTORY.rst"
+            + "/blob/master/HISTORY.md"
         )
     },
-    packages=["djangotables"],
+    packages=setuptools.find_packages(),
     license="MIT License",
     keywords=["django", "tables", "djangotables"],
-    install_requires=["Django>=2.2"],
-    python_requires=">=3.5",
+    install_requires=["Django>=2"],
+    python_requires=">=3.6",
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Django",
